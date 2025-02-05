@@ -28,7 +28,7 @@ export function WikiCard({ article }: WikiCardProps) {
                     currentLanguage.api +
                     `action=query&format=json&origin=*&prop=extracts&` +
                     `pageids=${article.pageid}&explaintext=1&exintro=1&` +
-                    `exsentences=5`  // Limit to 5 sentences
+                    `exsentences=5&search=interesting facts`  // Limit to 5 sentences
                 );
                 const data = await response.json();
                 const content = data.query.pages[article.pageid].extract;
